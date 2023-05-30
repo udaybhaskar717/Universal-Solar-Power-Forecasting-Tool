@@ -24,8 +24,7 @@ class DateTimeConverter:
         self.data['sin_hour'] = np.sin(2 * np.pi * self.data['Hour'].astype(int) / 24)
         self.data['cos_hour'] = np.cos(2 * np.pi * self.data['Hour'].astype(int) / 24)
 
-    def remove_features(self):
-        self.data.drop(['Year', 'Day', 'Minute', 'Hour','Clearsky GHI', 'DHI', 'DNI', 'Clearsky DHI', 'Clearsky DNI','Fill Flag'],inplace=True,axis=1)
+ 
 
     def get_data(self):
         return self.data
@@ -103,7 +102,7 @@ class SolarDataProcessor:
         self.dt_converter = DateTimeConverter(data)
         self.dt_converter.add_month_hour_columns()
         self.dt_converter.add_features()
-        self.dt_converter.remove_features()
+        #self.dt_converter.remove_features()
         self.data = self.dt_converter.get_data()
 
         # SplitData object
