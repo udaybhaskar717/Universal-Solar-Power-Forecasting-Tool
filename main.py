@@ -8,7 +8,7 @@ Original file is located at
 """
 
 import streamlit as st
-from process import SolarDataProcessor
+from solardataprocessor import SolarDataProcessor
 from model import TransferLearningModel
 
 # Constants
