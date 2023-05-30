@@ -9,7 +9,7 @@ Original file is located at
 
 import streamlit as st
 from solardataprocessor import SolarDataProcessor
-from model import TransferLearningModel
+from transferlearningmodel import TransferLearningModel
 
 # Constants
 BASE_MODEL_PATH = "https://github.com/udaybhaskar717/Universal-Solar-Power-Forecasting-Tool/blob/main/Solar_Irradiance_Bi-LSTM_Base_Model_kaz.h5"
