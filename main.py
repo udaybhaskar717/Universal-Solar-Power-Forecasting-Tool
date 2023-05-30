@@ -12,7 +12,7 @@ from process import SolarDataProcessor
 from model import TransferLearningModel
 
 # Constants
-BASE_MODEL_PATH = "https://github.com/udaybhaskar717/Universal-Solar-Power-Forecasting-Tool/blob/main/Solar_Irradiance_Bi-LSTM_Base_Model_kaz.h5
+BASE_MODEL_PATH = "https://github.com/udaybhaskar717/Universal-Solar-Power-Forecasting-Tool/blob/main/Solar_Irradiance_Bi-LSTM_Base_Model_kaz.h5"
 TARGET_REGIONS = ['']  # replace with actual target regions
 N_TIMESTEPS = 96
 N_FEATURES = 26
