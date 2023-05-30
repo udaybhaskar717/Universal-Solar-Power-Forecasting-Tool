@@ -8,7 +8,7 @@ Original file is located at
 """
 
 from keras.layers import Reshape
-from keras.optimizers import Adam
+from tensorflow.keras.optimizers import Adam
 from keras.models import load_model, Model
 from keras.layers import Dense
 from keras.callbacks import EarlyStopping, ModelCheckpoint
