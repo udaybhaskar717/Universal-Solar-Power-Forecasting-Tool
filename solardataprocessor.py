@@ -106,8 +106,10 @@ class SolarDataProcessor:
         self.data = self.dt_converter.get_data()
 
         # SplitData object
-        self.sd1 = SplitData(self.data, n_timesteps, n_outputs, train_start, train_end, test_start, only_production=False)
+        self.sd1 = SplitData(
+            self.data, n_timesteps, n_outputs, train_start, train_end, test_start, only_production=only_production)
         self.X_train, self.y_train, self.X_test, self.y_test = self.sd1.preprocess_data()
 
     def get_processed_data(self):
         return self.X_train, self.y_train, self.X_test, self.y_test
+
