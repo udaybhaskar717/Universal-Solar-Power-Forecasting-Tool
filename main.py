@@ -8,6 +8,7 @@ Original file is located at
 """
 
 import streamlit as st
+import pandas as pd
 from solardataprocessor import SolarDataProcessor
 from transferlearningmodel import TransferLearningModel
 
