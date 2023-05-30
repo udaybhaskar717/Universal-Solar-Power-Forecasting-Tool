@@ -19,12 +19,6 @@ N_TIMESTEPS = 96
 N_FEATURES = 26
 N_OUTPUTS = 1
 
-# Constants
-BASE_MODEL_PATH = "https://github.com/udaybhaskar717/Universal-Solar-Power-Forecasting-Tool/blob/main/Solar_Irradiance_Bi-LSTM_Base_Model_kaz.h5"
-TARGET_REGIONS = ['']  # replace with actual target regions
-N_TIMESTEPS = 96
-N_FEATURES = 26
-N_OUTPUTS = 1
 
 # Sidebar: User inputs
 st.sidebar.header('User Input Parameters')
@@ -36,7 +30,7 @@ strategy = st.sidebar.selectbox('Transfer learning strategy', ['S1', 'S2', 'S3']
 epochs = st.sidebar.number_input('Number of epochs', 1, 500, 250)
 
 if uploaded_file is not None:
-    data = pd.read_csv(uploaded_file)
+    data = pd.read_csv(uploaded_file,usecols=['PeriodStart','AirTemp','Azimuth','CloudOpacity','Ghi',"PrecipitableWater",	"RelativeHumidity","SurfacePressure","WindDirection10m"	,"WindSpeed10m"	,"Zenith"	,"AlbedoDaily"],parse_dates=True)
 
     # Preprocess data
     solar_data_processor = SolarDataProcessor(data, N_TIMESTEPS, N_OUTPUTS, only_production=False, train_start=train_start, train_end=train_end, test_start=test_start)
